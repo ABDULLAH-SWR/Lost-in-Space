@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6164500228771600572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1162973334221750591}
+  - component: {fileID: 4977855373530148400}
+  - component: {fileID: 3392960297847248974}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1162973334221750591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164500228771600572}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.86402, y: 21.15617, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4977855373530148400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164500228771600572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279789cdcede549478048013e9232607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardManager
+  playerRb: {fileID: 0}
+  availableCards:
+  - CardName: The Anvil
+    MassModifier: 3
+    BouncinessModifier: 0
+    GravityModifier: 1.3
+  - CardName: The Flubber
+    MassModifier: 0.5
+    BouncinessModifier: 1
+    GravityModifier: 0.8
+  - CardName: The Astronaut
+    MassModifier: 1
+    BouncinessModifier: 0.5
+    GravityModifier: 0.1
+  - CardName: Normal
+    MassModifier: 1
+    BouncinessModifier: 0
+    GravityModifier: 1
+--- !u!114 &3392960297847248974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164500228771600572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c4a0324b1de5e4cbda1b63fd04b2d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  draftPanel: {fileID: 0}
+  hintPanel: {fileID: 0}
+  activeCardText: {fileID: 0}
+  hintTextDisplay: {fileID: 0}
+  levelHint: Gravity will pull you into the pit. Use something to float in a straight
+    line!
