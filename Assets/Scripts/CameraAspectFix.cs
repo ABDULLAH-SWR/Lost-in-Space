@@ -1,41 +1,40 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Camera))]
-public class CameraAspectFix : MonoBehaviour
+public class AspectRatioFitter : MonoBehaviour
 {
-    [Tooltip("The aspect ratio you designed the game for (usually 16:9)")]
-    public Vector2 targetAspect = new Vector2(16, 9);
-
-    private Camera cam;
-    private float defaultOrthographicSize;
+    // Set your target aspect ratio here (16:9)
+    public float targetAspect = 16.0f / 9.0f;
 
     void Start()
     {
-        cam = GetComponent<Camera>();
-        defaultOrthographicSize = cam.orthographicSize;
-        AdjustCamera();
-    }
+        // Determine the current screen's aspect ratio
+        float windowAspect = (float)Screen.width / (float)Screen.height;
 
-    void AdjustCamera()
-    {
-        // Calculate the target ratio (16/9 = 1.777)
-        float targetRatio = targetAspect.x / targetAspect.y;
+        // Compare current ratio to target ratio
+        float scaleHeight = windowAspect / targetAspect;
 
-        // Calculate the actual screen ratio of the web browser
-        float windowRatio = (float)Screen.width / (float)Screen.height;
+        Camera cam = GetComponent<Camera>();
 
-        // Compare the two
-        float scaleHeight = windowRatio / targetRatio;
-
-        // If the screen is narrower than 16:9, zoom the camera out
+        // If the screen is taller than 16:9 (like your 16-inch laptop)
         if (scaleHeight < 1.0f)
         {
-            cam.orthographicSize = defaultOrthographicSize / scaleHeight;
+            Rect rect = cam.rect;
+            rect.width = 1.0f;
+            rect.height = scaleHeight;
+            rect.x = 0;
+            rect.y = (1.0f - scaleHeight) / 2.0f;
+            cam.rect = rect;
         }
+        // If the screen is wider than 16:9 (like an ultrawide monitor)
         else
         {
-            // If it's wider (like an ultrawide monitor), keep the default size
-            cam.orthographicSize = defaultOrthographicSize;
+            float scaleWidth = 1.0f / scaleHeight;
+            Rect rect = cam.rect;
+            rect.width = scaleWidth;
+            rect.height = 1.0f;
+            rect.x = (1.0f - scaleWidth) / 2.0f;
+            rect.y = 0;
+            cam.rect = rect;
         }
     }
 }

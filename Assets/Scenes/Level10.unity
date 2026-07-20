@@ -545,6 +545,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -670,6 +671,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a631e11673e206046a84437570921457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AspectRatioFitter
+  targetAspect: 1.7777778
 --- !u!1 &541246454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,7 +1542,7 @@ SpriteRenderer:
   m_SortingOrder: 7
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1732467230996842929, guid: e6bdeb94e4bbc2b4a89984cbb7ab5f80, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.64705884}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3859,6 +3873,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 149973455426230260, guid: 72327529455c05141bc56d09f512dcb4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 137
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572835128311025037, guid: 72327529455c05141bc56d09f512dcb4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -176
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717530416198727442, guid: 72327529455c05141bc56d09f512dcb4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1778930147902773978, guid: 72327529455c05141bc56d09f512dcb4, type: 3}
       propertyPath: levelHint
       value: Final boss of the stage can be defeated by Bounciness.
@@ -3943,6 +3969,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2885397556797283208, guid: 72327529455c05141bc56d09f512dcb4, type: 3}
+      propertyPath: m_text
+      value: "Stage \nCleared"
+      objectReference: {fileID: 0}
     - target: {fileID: 2931346276857337067, guid: 72327529455c05141bc56d09f512dcb4, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -3955,6 +3985,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReturnToMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 6805217274115337611, guid: 72327529455c05141bc56d09f512dcb4, type: 3}
+      propertyPath: m_text
+      value: Levels
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166188592056971153, guid: 72327529455c05141bc56d09f512dcb4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8852805823085383280, guid: 72327529455c05141bc56d09f512dcb4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3964,7 +4002,8 @@ PrefabInstance:
       value: LoadNextLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1974557254449246157, guid: 72327529455c05141bc56d09f512dcb4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72327529455c05141bc56d09f512dcb4, type: 3}
